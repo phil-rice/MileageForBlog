@@ -45,8 +45,8 @@ trait Matrix[D, MM] {
   def put(hs: MM, l1: Int, l2: Int, d: D): MM
 
   def addIfBetter(mm: MM, k: Int, i: Int, j: Int)(implicit distanceLike: Distance[D]) = {
-    val newDistance = distanceLike.add(get(mm, i, j), get(mm, k, j))
-    if (distanceLike.lessThan(get(mm, i, j), newDistance))
+    val newDistance = distanceLike.add(get(mm, i, k), get(mm, k, j))
+    if (distanceLike.lessThan( newDistance,get(mm, i, j)))
       put(mm, i, j, newDistance)
     else mm
   }

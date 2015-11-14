@@ -17,15 +17,15 @@ abstract class DistanceTests[D: Distance] extends FlatSpec with Matchers {
     distanceLike.large shouldBe large
   }
 
-  "Distance" should "implment addition" in {
+it  should "implment addition" in {
     distanceLike.add(one, two) shouldBe three
   }
-  "Distance" should "implment addition with large to always return large" in {
+ it  should "implment addition with large to always return large" in {
 	  distanceLike.add(one, two) shouldBe three
 	  distanceLike.add(one, large) shouldBe large
 	  distanceLike.add(large, two) shouldBe large
   }
-  "Distance" should "implement less than" in {
+it  should "implement less than" in {
     distanceLike.lessThan(one, two) shouldBe true
     distanceLike.lessThan(two, one) shouldBe false
     distanceLike.lessThan(one, one) shouldBe false
@@ -33,17 +33,17 @@ abstract class DistanceTests[D: Distance] extends FlatSpec with Matchers {
     distanceLike.lessThan(large, large) shouldBe false
     distanceLike.lessThan(large, one) shouldBe false
   }
-  "Distance" should "implement less than with large numbers" in {
+it  should "implement less than with large numbers" in {
 	  distanceLike.lessThan(one, large) shouldBe true
 	  distanceLike.lessThan(one, distanceLike.add(large, two)) shouldBe true
   }
-  "Distance" should "implement makeArray" in {
+it should "implement makeArray" in {
     val array = distanceLike.makeArray(5, one)
     array.length shouldBe 5
     for (i <- 0 to 4) array(i) shouldBe one
   }
   
-  "Distance" should "implement makeArrayArray" in {
+  it should "implement makeArrayArray" in {
     val array = distanceLike.makeArrayArray(5, one)
     array.length shouldBe 5
     for (i <- 0 to 4) {

@@ -69,10 +69,20 @@ abstract class MileageShortTests[MM](implicit matrixLike: Matrix[Short, MM]) ext
   implicit def toMileage(t: (Int, Int, Int)) = MileageEdge(t._1, t._2, t._3.toShort)
 }
 
-class MilageArrayArrayIntTests extends MileageIntTests[Array[Array[Int]]]
-class MilageMapMapShortTests extends MileageShortTests[Map[Int, Map[Int, Short]]]
-//class MilageMapMapIntTests extends MileageIntTests[Map[Int, Map[Int, Int]]]
-//class MilageArrayArrayShortTests extends MileageShortTests[Array[Array[Short]]]
-//
-//class MilageHashMapHashMapIntTests extends MileageIntTests[HashMap[Int, HashMap[Int, Int]]]
-//class MilageHashMapHashMapShortTests extends MileageShortTests[HashMap[Int, HashMap[Int, Short]]]
+class MileageArrayArrayIntTests extends MileageIntTests[Array[Array[Int]]]
+class MileageMapMapIntTests extends MileageIntTests[Map[Int, Map[Int, Int]]]
+class MileageHashMapHashMapIntTests extends MileageIntTests[HashMap[Int, HashMap[Int, Int]]]
+class MileageMapTupleToIntTests extends MileageIntTests[Map[(Int, Int), Int]]
+class MileageHashMapTupleToIntTests extends MileageIntTests[HashMap[(Int, Int), Int]]
+class MileageArrayOfLocationsIntTests extends MileageIntTests[ArrayOfLocationsAndSize[Int]]
+class MileageIntArrayAndLengthTests extends MileageIntTests[IntArrayAndLength]
+
+class MileageArrayArrayShortTests extends MileageShortTests[Array[Array[Short]]]
+class MileageMapMapShortTests extends MileageShortTests[Map[Int, Map[Int, Short]]]
+class MileageHashMapHashMapShortTests extends MileageShortTests[HashMap[Int, HashMap[Int, Short]]]
+class MileageMapTupleToShortTests extends MileageShortTests[Map[(Int, Int), Short]]
+class MileageHashMapTupleToShortTests extends MileageShortTests[HashMap[(Int, Int), Short]]
+class MileageArrayOfLocationsShortTests extends MileageShortTests[ArrayOfLocationsAndSize[Short]]
+class MileageShortArrayAndLengthTests extends MileageShortTests[ShortArrayAndLength]
+                            
+

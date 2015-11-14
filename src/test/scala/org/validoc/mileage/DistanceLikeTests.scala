@@ -21,7 +21,7 @@ it  should "implment addition" in {
     distanceLike.add(one, two) shouldBe three
   }
  it  should "implment addition with large to always return large" in {
-	  distanceLike.add(one, two) shouldBe three
+	  distanceLike.add(large, large) shouldBe large
 	  distanceLike.add(one, large) shouldBe large
 	  distanceLike.add(large, two) shouldBe large
   }

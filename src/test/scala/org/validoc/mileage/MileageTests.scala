@@ -13,14 +13,15 @@ abstract class MileageTests[D: Distance, MM](implicit matrixLike: Matrix[D, MM])
   import distanceLike._
 
   "A mileage matrix" when {
-    val mm = mf(3, List())
     "empty" should {
       "have a zero for same from/to" in {
+        val mm = mf(3, List())
         mm(0, 0) shouldBe zero
         mm(1, 1) shouldBe zero
         mm(2, 2) shouldBe zero
       }
       "have a large value for other mileages" in {
+        val mm = mf(3, List())
         for { i <- 0 to 2; j <- 0 to 2 if i != j } {
           mm(i, j).getClass shouldBe large.getClass
           mm(i, j) shouldBe large
